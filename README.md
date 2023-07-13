@@ -1,2 +1,3 @@
-# next-news
-Study Next.js new feats
+# Next.js 13
+
+News feats
