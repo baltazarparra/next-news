@@ -17,7 +17,6 @@ export default function paginas() {
         <br />
         <br />
       </p>
-      <Link href="/">Home</Link>
     </>
   )
 }
