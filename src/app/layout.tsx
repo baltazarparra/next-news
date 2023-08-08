@@ -1,5 +1,7 @@
 import './globals.css'
 
+import { Suspense } from 'react'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
@@ -35,8 +37,9 @@ export default function RootLayout({
         </header>
         {children}
         <footer>
-          <p>baltazarparra 2024</p>
-          <Cotation />
+          <Suspense fallback={<p>carregando cotação...</p>}>
+            <Cotation />
+          </Suspense>
         </footer>
       </body>
     </html>

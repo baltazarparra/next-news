@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 interface Props {
   params: {
     id: string
@@ -22,17 +24,19 @@ export default async function Repos({ params }: Props) {
   return (
     <>
       <h1>Usuário: {params.id}</h1>
-      <ul>
-        {repos.map((item) => {
-          return (
-            <li key={item.id}>
-              <a href={item.html_url} target="_blank">
-                <pre>{item.name}</pre>
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+      <Suspense fallback={<p>carregando repositórios...</p>}>
+        <ul>
+          {repos.map((item) => {
+            return (
+              <li key={item.id}>
+                <a href={item.html_url} target="_blank">
+                  <pre>{item.name}</pre>
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </Suspense>
     </>
   )
 }
