@@ -5,7 +5,23 @@ interface Props {
 }
 
 export default async function Repos({ params }: Props) {
-  const response = await fetch(`https://api.github.com/users/${params.id}/starred`)
+  const response = await fetch(`https://api.github.com/users/${params.id}/starred`, {
+    //
+    // Cache
+    //
+    // force-cache: request cacheada, mesma resposta para todos
+    // cache: 'force-cache',
+    //
+    // no-store: uma request por user, SSR
+    // cache: 'no-store',
+    //
+    // Revalidar
+    //
+    // next: {
+    //   revalidate: 300
+    // }
+  })
+
   const repos = await response.json()
 
   return (
