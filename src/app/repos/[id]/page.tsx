@@ -14,8 +14,8 @@ export default async function Repos({ params }: Props) {
       <ul>
         {repos.map((item) => {
           return (
-            <li>
-              <a href={item.url}>
+            <li key={item.id}>
+              <a href={item.html_url} target="_blank">
                 <pre>{item.name}</pre>
               </a>
             </li>
