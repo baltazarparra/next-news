@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 
+import Cotation from '@/components/Cotation'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -33,7 +35,8 @@ export default function RootLayout({
         </header>
         {children}
         <footer>
-          <small>baltazarparra 2024</small>
+          <p>baltazarparra 2024</p>
+          <Cotation />
         </footer>
       </body>
     </html>

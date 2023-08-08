@@ -15,11 +15,6 @@ export default async function Repos({ params }: Props) {
     // no-store: uma request por user, SSR
     // cache: 'no-store',
     //
-    // Revalidar
-    //
-    // next: {
-    //   revalidate: 300
-    // }
   })
 
   const repos = await response.json()
